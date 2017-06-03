@@ -11,6 +11,7 @@ import android.app.LoaderManager.LoaderCallbacks;
 
 import android.content.CursorLoader;
 import android.content.Loader;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -333,6 +334,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+                //跳转到主界面
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
