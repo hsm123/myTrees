@@ -1,4 +1,5 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="top.chenwenbin.mytrees.LoginActivity"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:layout_editor_absoluteY="25dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <!-- Login progress -->
     <ProgressBar
@@ -16,24 +19,31 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="16dp" />
 
     <ScrollView
         android:id="@+id/login_form"
-        android:layout_width="match_parent"
-        android:layout_height="245dp">
+        android:layout_width="336dp"
+        android:layout_height="245dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
 
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_weight="3.78" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -79,4 +89,4 @@
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
